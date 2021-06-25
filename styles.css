@@ -290,8 +290,8 @@ Hero
 .hero {
   min-height: 100vh;
   margin-top: -6rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./images/main-bcg.jpeg) center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/main-bg.jpeg) center/cover;
   display: grid;
   place-items: center;
   color: var(--clr-white);
