@@ -1,3 +1,5 @@
+import { store } from './store.js'
+
 const allProductsUrl = 'https://course-api.com/javascript-store-products'
 const singleProductUrl =
   'https://course-api.com/javascript-store-single-product'
@@ -8,4 +10,8 @@ const getElement = (selection) => {
   throw Error(`Please check "${selection}" selector, no such element exist`)
 }
 
-export { allProductsUrl, singleProductUrl, getElement }
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item))
+}
+
+export { allProductsUrl, singleProductUrl, getElement, setStorageItem }
