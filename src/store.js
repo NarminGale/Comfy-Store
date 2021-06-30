@@ -1,14 +1,4 @@
-import { setStorageItem } from './utils.js'
-
-const getStorageItem = (item) => {
-  let storageItem = localStorage.getItem(item)
-  if (storageItem) {
-    storageItem = JSON.parse(localStorage.getItem(item))
-  } else {
-    storageItem = []
-  }
-  return storageItem
-}
+import { setStorageItem, getStorageItem } from './utils.js'
 
 let store = getStorageItem('store')
 const setupStore = (products) => {
