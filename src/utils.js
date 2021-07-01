@@ -1,5 +1,3 @@
-import { store } from './store.js'
-
 const allProductsUrl = 'https://course-api.com/javascript-store-products'
 const singleProductUrl =
   'https://course-api.com/javascript-store-single-product'
@@ -10,16 +8,12 @@ const getElement = (selection) => {
   throw Error(`Please check "${selection}" selector, no such element exist`)
 }
 
-const formatPrice = () => {
+const formatPrice = (price) => {
   let formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   }).format((price / 100).toFixed(2))
   return formattedPrice
-}
-
-const setStorageItem = (name, item) => {
-  localStorage.setItem(name, JSON.stringify(item))
 }
 
 const getStorageItem = (item) => {
@@ -30,6 +24,9 @@ const getStorageItem = (item) => {
     storageItem = []
   }
   return storageItem
+}
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item))
 }
 
 export {
