@@ -12,7 +12,7 @@ const loading = getElement('.page-loading')
 const centerDOM = getElement('.single-product-center')
 const pageTitleDOM = getElement('.page-hero-title')
 const imgDOM = getElement('.single-product-img')
-const titleDOM = getElement('.single-product-centitleter')
+const titleDOM = getElement('.single-product-title')
 const companyDOM = getElement('.single-product-company')
 const priceDOM = getElement('.single-product-price')
 const colorsDOM = getElement('.single-product-colors')
@@ -25,12 +25,34 @@ let productID
 // show product when page loads
 window.addEventListener('DOMContentLoaded', async function () {
   const urlID = window.location.search
-
   try {
     const response = await fetch(`${singleProductUrl}${urlID}`)
-    console.log(response)
     if (response.status >= 200 && response.status <= 299) {
       const product = await response.json()
+
+      // grab data
+      const { id, fields } = product
+      productID = id
+
+      console.log(product)
+      const { name, company, price, colors, description } = fields
+      const image = fields.image[0].thumbnails.large.url
+
+      // set values
+      document.title = `${name.toUpperCase()} | Comfy`
+      pageTitleDOM.textContent = `Home / ${name}`
+      imgDOM.src = image
+      titleDOM.textContent = name
+      companyDOM.textContent = `by ${company}`
+      priceDOM.textContent = formatPrice(price)
+      descDOM.textContent = description
+
+      colors.forEach((color) => {
+        const span = document.createElement('span')
+        span.classList.add('product-color')
+        span.style.backgroundColor = `${color}`
+        colorsDOM.appendChild(span)
+      })
     } else {
       centerDOM.innerHTML = `
       <div>
