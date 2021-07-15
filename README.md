@@ -2,7 +2,7 @@
 
 > https://comfystore-project.netlify.app/
 
-<img src="./project-image.png">
+<a href="https://comfystore-project.netlify.app/"><img src="./project-image.png" alt="project image"></a>
 
 ---
 
