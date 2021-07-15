@@ -8,7 +8,8 @@
 
 ## Description
 
-Welcome to the e-commerce project by the name of company. This is the furniture company called <b>Comfy</b> and they want us to create a e-commerce site using vanilla JavaScript.
+Welcome to the e-commerce project by the name of company. </br>
+This is the furniture company called <b>Comfy</b> and they want us to create a e-commerce site using vanilla JavaScript.
 
 #### Technologies
 
